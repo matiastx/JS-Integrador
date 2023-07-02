@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/login_reg.css" />
+  </head>
+  <body>
+    <header>
+      <!-- inicio de la Barra de Navegacion -->
+      <nav class="navbar">
+        <!-- Logo Principal -->
+        <a href="../../index.html"
+          ><img class="logo" src="../img/Ritual-vector.png" alt="Ritual"
+        /></a>
+      </nav>
+    </header>
+    <!-- INICIO DE SECCION HERO -->
+    <section id="hero">
+      <div class="h-info">
+        <form class="formContainer">
+          <h1 class="formTitle">Iniciá Sesión</h1>
+          <!-- Email -->
+          <div class="formField">
+            <input
+              type="email"
+              placeholder="Email"
+              class="formInput"
+              id="email"
+              autocomplete="off" />
+          </div>
+          <!-- Contraseña -->
+          <div class="formField">
+            <input
+              type="password"
+              placeholder="Password"
+              class="formInput"
+              id="password"
+              autocomplete="off" />
+          </div>
+          <!-- Mesaje de Error -->
+          <small id="formError"></small>
+          <!-- Boton Submit -->
+          <input type="submit" class="formSubmitBtn" value="Iniciar Sesión" />
+          <p class="formRegister">
+            ¿No tenés cuenta?
+            <a class="formRegisterLink" href="./register.html">Registrate</a>
+          </p>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <ul class="footer-items">
+          <li>
+            <a href="#">Terminos de Uso</a>
+          </li>
+          <li>
+            <a href="#">Acerca de Nosotros</a>
+          </li>
+          <li>
+            <a href="#">Soporte</a>
+          </li>
+        </ul>
+      </div>
+      <p>Ritual Experiencias</p>
+    </footer>
+  </body>
+</html>

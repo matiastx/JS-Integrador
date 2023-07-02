@@ -1,0 +1,97 @@
+@media (max-width: 960px) {
+  #hero {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .menu-h {
+    display: flex;
+  }
+
+  .h-info h1,
+  .h-card-info {
+    display: none;
+  }
+
+  .h-info p {
+    width: 90%;
+  }
+
+  .h-card {
+    width: 90%;
+  }
+
+  .navbar-list {
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+    left: 25px;
+    padding: 20px 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--ghost-white);
+    border-radius: 0 0 15px 15px;
+    gap: 25px;
+    font-size: 40px;
+    font-weight: 600;
+    border: solid 1px var(--bg-page);
+    border-top: none;
+    display: none;
+    animation: fade 0.3s ease-in;
+  }
+
+  .open-menu {
+    display: flex;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* #menu-toggle:checked ~ .navbar-list {
+    display: flex;
+  } */
+}
+
+@media (max-width: 520px) {
+  .nv-contacto {
+    display: none;
+  }
+
+  .contact {
+    display: flex;
+  }
+
+  .navbar {
+    gap: 5px;
+  }
+
+  .h-info p {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .navbar-list {
+    width: 100%;
+    left: 0px;
+  }
+
+  .cart-menu {
+    width: 100%;
+  }
+
+  .contact-info {
+    width: 100%;
+    font-weight: 600;
+  }
+
+  .mapouter {
+    width: 95%;
+  }
+}

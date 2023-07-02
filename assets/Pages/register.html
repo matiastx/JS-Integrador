@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/login_reg.css" />
+  </head>
+  <body>
+    <header>
+      <!-- inicio de la Barra de Navegacion -->
+      <nav class="navbar">
+        <!-- Logo Principal -->
+        <a href="../../index.html"
+          ><img class="logo" src="../img/Ritual-vector.png" alt="Ritual"
+        /></a>
+      </nav>
+    </header>
+    <!-- INICIO DE SECCION HERO -->
+    <section id="hero">
+      <div class="h-info">
+        <form class="formContainer">
+          <h1 class="formTitle">Hacete Cliente</h1>
+          <!-- Nombre -->
+          <div class="formField">
+            <input
+              type="text"
+              placeholder="Nombre"
+              class="formInput"
+              id="name"
+              autocomplete="off" />
+            <small></small>
+          </div>
+          <!-- Apellido -->
+          <div class="formField">
+            <input
+              type="text"
+              placeholder="Apellido"
+              class="formInput"
+              id="lastName"
+              autocomplete="off" />
+            <small></small>
+          </div>
+          <!-- Email -->
+          <div class="formField">
+            <input
+              type="email"
+              placeholder="Email"
+              class="formInput"
+              id="email"
+              autocomplete="off"
+              required />
+            <small></small>
+          </div>
+          <!-- Password -->
+          <div class="formField">
+            <input
+              type="password"
+              placeholder="Password"
+              class="formInput"
+              id="password"
+              autocomplete="off" />
+            <small></small>
+          </div>
+          <!-- Telefono -->
+          <div class="formField">
+            <input
+              type="text"
+              placeholder="Telefono"
+              class="formInput"
+              id="phone"
+              autocomplete="off" />
+            <small></small>
+          </div>
+          <!-- Boton Submit -->
+          <input type="submit" class="formSubmitBtn" value="Registrate" />
+          <p class="formRegister">
+            ¿Ya tenés cuenta?
+            <a class="formRegisterLink" href="./login.html">Iniciá Sesión</a>
+          </p>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <ul class="footer-items">
+          <li>
+            <a href="#">Terminos de Uso</a>
+          </li>
+          <li>
+            <a href="#">Acerca de Nosotros</a>
+          </li>
+          <li>
+            <a href="#">Soporte</a>
+          </li>
+        </ul>
+      </div>
+      <p>Ritual Experiencias</p>
+    </footer>
+  </body>
+</html>

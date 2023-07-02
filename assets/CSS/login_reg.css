@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Oswald:wght@200;400&family=Passion+One&family=Poppins:wght@300;700&family=Signika+Negative&display=swap");
+
+:root {
+  /* Colores Varios */
+  --onyx: #393e41ff;
+  --bg-patagonia: #1a3c34;
+  --Error: #e40d22;
+  --Success: #28a745;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.formField small {
+  color: var(--Error);
+  max-width: 350px;
+  text-align: center;
+  display: none;
+}
+
+.formTitle {
+  margin-bottom: 10px;
+}
+
+.formInput {
+  padding: 15px 35px 15px 15px;
+  border-radius: 10px;
+  background-color: #a4b89d;
+  color: #fff;
+  outline: none;
+  border: none;
+  width: 315px;
+  margin: 5px 0px;
+  color: var(--onyx);
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+}
+
+/* Error / Success */
+.formField.error input {
+  border: 1px solid var(--Error);
+}
+
+.formField small {
+  color: var(--Error);
+  max-width: 350px;
+  text-align: center;
+  display: none;
+}
+
+.formField.success input {
+  border: 1px solid var(--Success);
+}
+
+#formError {
+  color: var(--Error);
+  font-size: 1rem;
+  margin: 8px 0px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.formSubmitBtn {
+  font-size: 0.9rem;
+  background: var(--bg-patagonia);
+  color: white;
+  border: none;
+  margin-top: 5px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 315px;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.formRegisterLink,
+.formContainer p {
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--bg-patagonia);
+  font-family: "Kaushan Script", cursive;
+}
+
+.formContainer p {
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+  font-weight: 350;
+}
+
+.formRegisterLink:hover {
+  font-weight: 400;
+  color: var(--azure);
+  transition: 0.2s;
+}
+.formSubmitBtn:hover {
+  font-weight: 400;
+  background-color: var(--azure);
+  transition: 0.2s;
+}
