@@ -757,8 +757,11 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-white);
-  background-color: var(--azure);
+  color: var(--bg-sa);
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  background-color: var(--bg-patagonia);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -775,4 +778,18 @@ footer p {
   color: var(--bg-ao);
   font-size: 15px;
   text-align: center;
+}
+
+.disable {
+  background-color: var(--battleship-grey);
+  color: white;
+  cursor: auto;
+  border: none;
+}
+
+.disable:hover {
+  background-color: var(--battleship-grey);
+  color: white;
+  cursor: auto;
+  border: none;
 }

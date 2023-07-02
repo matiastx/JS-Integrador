@@ -12,14 +12,20 @@ const cartMessage = document.querySelector(".cartMessage");
 const cartProducts = document.querySelector(".cart-menu");
 const cartBubble = document.querySelector(".cartBubble");
 const cartTotal = document.querySelector(".totalPriceCart");
+const cleanCart = document.querySelector(".cleanCart");
+const buyCart = document.querySelector(".buyCart");
 
 // ---------------CARRITO---------------
 // Variables
 let cart = JSON.parse(localStorage.getItem("ritualCart")) || [];
+let sales = JSON.parse(localStorage.getItem("ritualSales")) || [];
 
 // Guardar Carrito en localStorage
 const saveCart = () => {
   localStorage.setItem("ritualCart", JSON.stringify(cart));
+};
+const saveSale = () => {
+  localStorage.setItem("ritualSales", JSON.stringify(sales));
 };
 // ---------------CARRITO---------------
 
@@ -187,6 +193,38 @@ const showCartMessage = (message) => {
   }, 1000);
 };
 
+const productQuantityUp = (id) => {
+  const isProductOnCart = cart.find((item) => item.id === id);
+  add1UnitToCart(isProductOnCart);
+};
+
+const deleteCartProduct = (productToDelete) => {
+  cart = cart.filter((product) => {
+    return product.id !== productToDelete.id;
+  });
+  updateCart();
+};
+
+const productQuantityDown = (id) => {
+  const isProductOnCart = cart.find((item) => item.id === id);
+  if (isProductOnCart.quatity === 1) {
+    if (window.confirm("Esta seguro que desea eliminar el articulo")) {
+      deleteCartProduct(isProductOnCart);
+    }
+    return;
+  }
+  delete1UnitToCart(isProductOnCart);
+};
+
+const CartProductsQuantity = (e) => {
+  if (e.target.classList.contains("down")) {
+    productQuantityDown(e.target.dataset.id);
+  } else if (e.target.classList.contains("up")) {
+    productQuantityUp(e.target.dataset.id);
+  }
+  updateCart();
+};
+
 const ifExistOnCart = (productId) => {
   return cart.find((item) => {
     return item.id === productId;
@@ -205,7 +243,15 @@ const createProductOnCart = (product) => {
 const add1UnitToCart = (product) => {
   cart = cart.map((cartProduct) => {
     return cartProduct.id === product.id
-      ? { ...cartProduct, quatity: cartProduct.quatity + 1 }
+      ? { ...cartProduct, quatity: Number(cartProduct.quatity) + 1 }
+      : cartProduct;
+  });
+};
+
+const delete1UnitToCart = (product) => {
+  cart = cart.map((cartProduct) => {
+    return cartProduct.id === product.id
+      ? { ...cartProduct, quatity: Number(cartProduct.quatity) - 1 }
       : cartProduct;
   });
 };
@@ -258,9 +304,11 @@ const renderCartBubble = () => {
 
 const updateCart = () => {
   saveCart();
-  renderCart();
   calculateCartTotal();
   renderCartBubble();
+  renderCart();
+  showCartTotal();
+  cartBtnsState();
 };
 
 const addtoCart = (e) => {
@@ -271,19 +319,51 @@ const addtoCart = (e) => {
   // si el produto ya esta en el carrito
   if (ifExistOnCart(product.id)) {
     add1UnitToCart(product);
-    // showMenssage("Agregada 1 unidad mas del producto al carrito");
+    showCartMessage("Agregada 1 unidad mas del producto al carrito");
   } else {
     // si el producto aun no esta en el carrito
     createProductOnCart(product);
-    // showMenssage("Producto agregado al carrito");
+    showCartMessage("Producto agregado al carrito");
   }
   updateCart();
+};
+
+const cleanCartProducts = () => {
+  if (cleanCart.classList.contains("disable")) {
+    return;
+  }
+  if (window.confirm("Desea vaciar su carrito?")) {
+    cart = [];
+    updateCart();
+  }
+};
+
+const buyCartProducts = () => {
+  if (buyCart.classList.contains("disable")) {
+    return;
+  }
+  if (window.confirm("Desea realizar esta compra?")) {
+    sales = [...sales, { saleid: Date.now(), ...cart }];
+    saveSale();
+    cart = [];
+    updateCart();
+    alert("Compra realizada correctamente");
+  }
+};
+
+const cartBtnsState = () => {
+  if (!cart.length) {
+    buyCart.classList.add("disable");
+    cleanCart.classList.add("disable");
+  } else {
+    buyCart.classList.remove("disable");
+    cleanCart.classList.remove("disable");
+  }
 };
 
 // ---------------CARRITO---------------
 
 const init = () => {
-  // renderProducts(MerchProducts);
   brandContainer.addEventListener("click", filterCars);
   cartBtn.addEventListener("click", toggleCart);
   bgMenuBtn.addEventListener("click", toggleMenu);
@@ -293,7 +373,13 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", renderCart);
   document.addEventListener("DOMContentLoaded", showCartTotal);
   productsContainer.addEventListener("click", addtoCart);
+  cartProductList.addEventListener("click", CartProductsQuantity);
   renderCartBubble();
+  cartBtnsState();
+  cleanCart.addEventListener("click", cleanCartProducts);
+  buyCart.addEventListener("click", buyCartProducts);
 };
 
 init();
+
+console.log(Date.now());
