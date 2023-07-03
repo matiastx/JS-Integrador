@@ -123,7 +123,7 @@ const renderProducts = (products) => {
                 data-name="${name}"
                 data-price=${price}
                 data-img="${cardImg}"
-                src="./assets/img/cart-icon.svg"
+                src="../../assets/img/cart-icon.svg"
                 alt="CartAdd" />
               <span>$ ${price}</span>
             </div>
@@ -343,7 +343,15 @@ const buyCartProducts = () => {
     return;
   }
   if (window.confirm("Desea realizar esta compra?")) {
-    sales = [...sales, { saleid: Date.now(), ...cart }];
+    sales = [
+      ...sales,
+      {
+        saleid: Date.now(),
+        total: calculateCartTotal(),
+        cartitems: { ...cart },
+        activeUser,
+      },
+    ];
     saveSale();
     cart = [];
     updateCart();
@@ -381,5 +389,3 @@ const init = () => {
 };
 
 init();
-
-console.log(Date.now());

@@ -6,6 +6,7 @@
   --bg-patagonia: #1a3c34;
   --Error: #e40d22;
   --Success: #28a745;
+  --azure: #0f7fe1ff;
 }
 
 .formContainer {
@@ -86,6 +87,7 @@
   width: 315px;
   font-family: "Oswald", sans-serif;
   font-size: 20px;
+  transition: all 0.3s ease-out;
 }
 
 .formRegisterLink,
@@ -94,6 +96,7 @@
   font-weight: 300;
   color: var(--bg-patagonia);
   font-family: "Kaushan Script", cursive;
+  transition: all 0.3s ease-out;
 }
 
 .formContainer p {
@@ -105,10 +108,60 @@
 .formRegisterLink:hover {
   font-weight: 400;
   color: var(--azure);
-  transition: 0.2s;
+  transition: all 0.3s ease-out;
 }
 .formSubmitBtn:hover {
   font-weight: 400;
   background-color: var(--azure);
-  transition: 0.2s;
+  transition: all 0.3s ease-out;
+}
+
+.loginBtn {
+  font-size: 0.9rem;
+  background: var(--bg-patagonia);
+  color: white;
+  border: none;
+  margin-top: 5px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 150px;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  transition: all 0.3s ease-out;
+}
+
+.loginBtn:hover {
+  font-weight: 400;
+  background: var(--azure);
+  transition: all 0.3s ease-out;
+}
+
+.loginContainer {
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  #hero {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .h-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 440px) {
+  .loginContainer {
+    gap: 10px;
+  }
+
+  .h-info h1 {
+    font-size: 3rem;
+  }
+
+  .loginBtn {
+    width: 140px;
+  }
 }

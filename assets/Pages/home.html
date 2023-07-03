@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ritual Experiencias</title>
+    <link rel="stylesheet" href="../../assets/CSS/style.css" />
+    <link rel="stylesheet" href="../../assets/CSS/mediaqueries.css" />
+    <link rel="stylesheet" href="../../assets/CSS/animations.css" />
+  </head>
+  <body>
+    <header>
+      <!-- inicio de la Barra de Navegacion -->
+      <nav class="navbar">
+        <!-- Logo Principal -->
+        <img
+          class="logo"
+          src="../../assets/img/Ritual-vector.png"
+          alt="Ritual" />
+        <!-- Menu del Navbar -->
+        <ul class="navbar-list">
+          <li><a href="#hero" class="nv-element">Inicio</a></li>
+          <li><a href="#catalogo" class="nv-element">Marcas</a></li>
+          <li><a href="#products" class="nv-element">Productos</a></li>
+          <li>
+            <a href="" class="nv-element logoutBtn">Salir</a>
+          </li>
+          <li class="contact">
+            <a href="#contact" class="nv-element">Contactanos</a>
+          </li>
+        </ul>
+        <div class="navbar-info">
+          <div class="nv-contacto">
+            <!-- Menu iconos Contactanos -->
+            <div class="cont-icons">
+              <ul class="list-icons-c">
+                <li>
+                  <a href="#ct-whats"
+                    ><img
+                      class="logo-c"
+                      src="../../assets/img/Whatsap-vector.png"
+                      alt="whatsapp"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#ct-insta"
+                    ><img
+                      class="logo-c"
+                      src="../../assets/img/Instagram-vector.png"
+                      alt="instagram"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#ct-face"
+                    ><img
+                      class="logo-c"
+                      src="../../assets/img/Facebook-vector.png"
+                      alt="facebook"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Boton CARRITO -->
+        <label for="cart" class="carrolbl flex">
+          <img
+            class="carro"
+            src="../../assets/img/cart-icon.svg"
+            alt="Carrito" />
+          <div class="cartBubble">0</div>
+        </label>
+        <!-- MENU CARRITO -->
+        <div class="cart-menu flex">
+          <h3>TU COMPRA <span class="userName"></span></h3>
+          <!-- inicio productos comprados -->
+          <div class="cartProductList flex">
+            <!-- Template Producto Carrito -->
+            <!-- <div class="cart-product flex">
+            <img
+              src="./assets/img/Products/Quilmes/qui-copa-murphy.png"
+              alt="Product 01" />
+            <div class="cart-p-desc flex">
+              <h4>Producto</h4>
+              <p>Precio</p>
+              <span>$680</span>
+            </div>
+            <div class="cart-p-cant flex">
+              <p>-</p>
+              <span>1</span>
+              <p>+</p>
+            </div>
+          </div> -->
+          </div>
+          <!-- fin items comprados -->
+          <span class="cart-divisor"></span>
+          <div class="cart-total flex">
+            <h3>Total</h3>
+            <span class="totalPriceCart">$2040</span>
+          </div>
+          <button class="cart-btn-add cleanCart">Eliminar Pedido</button>
+          <button class="cart-btn-add buyCart">Realizar Pedido</button>
+        </div>
+        <!-- ☰ Menu Hamburguesa ☰ -->
+        <label for="menu-toggle" class="menu-h">☰</label>
+        <div class="overlay"></div>
+      </nav>
+    </header>
+    <!-- INICIO DE SECCION HERO -->
+    <section id="hero">
+      <div class="h-card">
+        <img
+          class="h-card-img"
+          src="../../assets/img/Ritual-vector.png"
+          alt="" />
+        <div class="h-card-info">
+          <p>
+            Repartimos en todo el centro de cordoba y alrededores, si no
+            llegamos con nuestro reparto estan habilitados los envios a todo el
+            pais
+          </p>
+        </div>
+      </div>
+      <div class="h-info">
+        <h1>Ritual Experiencias</h1>
+        <p>
+          Productos ondeados para fans de la cerveza✌🏻🍺. Además copas de Gin,
+          Aperol y vasos de Fernet 💥.
+        </p>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <!-- CATALOGO DE MARCAS -->
+      <h2>Nuestro catalago de Productos por Marca</h2>
+      <div class="c-cards-container flex">
+        <!-- <div class="c-cards pat c-b">
+          <label for="m-todo" class="m-todo">Ver Todo</label>
+        </div> -->
+        <div class="c-cards qui c-q brand" data-brand="Quilmes">
+          <label for="m-qui"
+            ><img
+              class="qui"
+              src="../../assets/img/Marcas/Quilmes.png"
+              alt="Quilmes"
+              data-brand="Quilmes"
+          /></label>
+        </div>
+        <div class="c-cards br c-b brand" data-brand="Brahma">
+          <label for="m-bra"
+            ><img
+              class="br"
+              src="../../assets/img/Marcas/Brahma.png"
+              alt="Brahma"
+              data-brand="Brahma"
+          /></label>
+        </div>
+
+        <div class="c-cards bud c-b brand" data-brand="Budweiser">
+          <label for="m-bud"
+            ><img
+              class="bud"
+              src="../../assets/img/Marcas/Bud.png"
+              alt="Budweiser"
+              data-brand="Budweiser"
+          /></label>
+        </div>
+        <div class="c-cards ao c-a brand" data-brand="Andes Origen">
+          <label for="m-ao"
+            ><img
+              class="ao"
+              src="../../assets/img/Marcas/AO.png"
+              alt="Andes Origen"
+              data-brand="Andes Origen"
+          /></label>
+        </div>
+        <div class="c-cards sa c-s brand" data-brand="Stella Artois">
+          <label for="m-sa"
+            ><img
+              class="sa"
+              src="../../assets/img/Marcas/Stella.png"
+              alt="Stella Artois"
+              data-brand="Stella Artois"
+          /></label>
+        </div>
+        <div class="c-cards cor-m c-c brand" data-brand="Corona">
+          <label for="m-cor"
+            ><img
+              src="../../assets/img/Marcas/Corona.png"
+              alt="Corona"
+              data-brand="Corona"
+          /></label>
+        </div>
+        <div class="c-cards pat c-p brand" data-brand="Patagonia">
+          <label for="m-pat"
+            ><img
+              class="pat"
+              src="../../assets/img/Marcas/Patagonia.png"
+              alt="Patagonia"
+              data-brand="Patagonia"
+          /></label>
+        </div>
+      </div>
+      <h2 id="products">Click en las Marcas para ver sus Productos</h2>
+      <!-- Contenedor de Productos -->
+      <div class="p-cards-container flex">
+        <!-- Inicio de productos -->
+
+        <!-- Template de Producto -->
+        <!-- <div class="p-cards flex qui">
+          <img
+            class="p-cards-logo"
+            src="./assets/img/Marcas/Quilmes.png"
+            alt="Quilmes" />
+          <img
+            class="p-cards-img"
+            src="./assets/img/Products/Andes Origen/ao-destapador.png"
+            alt="Copa Murphy" />
+          <div class="p-card-info flex">
+            <div class="p-card-desc flex">
+              <h3>Copa Murphy</h3>
+              <span></span>
+              <p>Contiene 1 Copa Murphy.</p>
+              <p>Capacidad: 330cc</p>
+            </div>
+            <div class="p-cards-price flex">
+              <img
+                class="logo btnAddtoCart"
+                data-id=""
+                data-name=""
+                data-price=""
+                data-img=""
+                src="./assets/img/cart-icon.svg"
+                alt="CartAdd" />
+              <span>$680</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- FIN de PRODUCTOS -->
+      </div>
+    </section>
+    <section id="contact">
+      <div class="contact-container flex">
+        <div class="contact-us flex">
+          <h3>Contactenos</h3>
+          <div class="contact-info flex">
+            <span>Torino, Ezequiel</span>
+            <ul class="contact-list flex">
+              <li>
+                <img
+                  src="../../assets/img/Ubicacion-vector.png"
+                  alt="Ubicacion" />
+                <a class="no-point" href="#">Blvd. de los Alemanes, Córdoba</a>
+              </li>
+              <li>
+                <img
+                  id="ct-insta"
+                  src="../../assets/img/Instagram-vector.png"
+                  alt="Instagram" />
+                <a href="https://www.instagram.com/ritualexperiencias/"
+                  >Ritual Experiencias en Instagram</a
+                >
+              </li>
+              <li>
+                <img
+                  id="ct-face"
+                  src="../../assets/img/Facebook-vector.png"
+                  alt="Facebook" />
+                <a
+                  href="https://www.facebook.com/profile.php?id=100067727444237"
+                  >Ritual Experiencias en Facebook</a
+                >
+              </li>
+              <li>
+                <img
+                  id="ct-whats"
+                  src="../../assets/img/Whatsap-vector.png"
+                  alt="whatsapp" />
+                <a class="no-point" href="#">351-6366748</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mapouter flex">
+          <div class="gmap_canvas flex">
+            <iframe
+              class="gmap_iframe"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=802&amp;height=400&amp;hl=en&amp;q=boulevar los alemanes&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+          </div>
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              max-width: 800px;
+              height: 400px;
+            }
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              width: 802px;
+              height: 400px;
+            }
+            .gmap_iframe {
+              width: 802px !important;
+              height: 400px !important;
+            }
+          </style>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <ul class="footer-items">
+          <li>
+            <a href="#">Terminos de Uso</a>
+          </li>
+          <li>
+            <a href="#">Acerca de Nosotros</a>
+          </li>
+          <li>
+            <a href="#">Soporte</a>
+          </li>
+        </ul>
+      </div>
+      <p>Ritual Experiencias</p>
+    </footer>
+    <div class="cartMessage"></div>
+    <script src="../JS/productsBase.js"></script>
+    <script src="../JS/main.js"></script>
+    <script src="../JS/home.js"></script>
+  </body>
+</html>
